@@ -1,0 +1,7 @@
+require("skylar.plugins-setup")
+require("skylar.core.options")
+require("skylar.core.keymaps")
+require("skylar.core.colorscheme")
+require("skylar.plugins.comment")
+require("skylar.plugins.nvim-tree")
+require("skylar.plugins.lualine")
