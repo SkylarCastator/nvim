@@ -114,16 +114,45 @@ return packer.startup(function(use)
 	use("MunifTanjim/nui.nvim") -- UI library for Neovim
 
 	--chatbot
+	--use({
+	--	"jackMort/ChatGPT.nvim",
+	--	config = function()
+	--		require("chatgpt").setup()
+	--	end,
+	--	requires = {
+	--		"MunifTanjim/nui.nvim",
+	--		"nvim-lua/plenary.nvim",
+	--		"nvim-telescope/telescope.nvim",
+	--	},
+	--})
+
+	-- Database
+	--use({
+	--	"tpope/vim-dadbod",
+	--	opt = true,
+	--	requires = {
+	--		"kristijanhusak/vim-dadbod-ui",
+	--		"kristijanhusak/vim-dadbod-completion",
+	--	},
+	--	config = function()
+	--		require("config.dadbod").setup()
+	--	end,
+	--	cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+	--})
+
+	-- Debugging
 	use({
-		"jackMort/ChatGPT.nvim",
+		"mfussenegger/nvim-dap",
+	})
+
+	-- vimspector
+	use({
+		"puremourning/vimspector",
+		cmd = { "VimspectorInstall", "VimspectorUpdate" },
+		fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
 		config = function()
-			require("chatgpt").setup()
+			require("config.vimspector").setup()
 		end,
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
 	})
 
 	if packer_bootstrap then

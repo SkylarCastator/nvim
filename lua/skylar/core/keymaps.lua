@@ -41,5 +41,15 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
--- restart lsp server 
+-- restart lsp server
 keymap.set("n", "<leader>.rs", ":LspRestart<CR>") -- mapping to restart lsp if nessessary
+
+--Vimspector
+keymap.set("n", "<leader>db", ":call vimspector#Launch()<CR>")
+keymap.set("n", "<leader>dr", ":call vimspector#Reset()<CR>")
+keymap.set("n", "<leader>dc", ":call vimspector#Continue()<CR>")
+keymap.set("n", "<leader>dn", ":call vimspector#StepOver()<CR>")
+keymap.set("n", "<leader>di", ":call vimspector#StepInto()<CR>")
+keymap.set("n", "<leader>do", ":call vimspector#StepOut()<CR>")
+keymap.set("n", "<leader>dt", ":call vimspector#ToggleBreakpoint()<CR>")
+keymap.set("n", "<leader>dl", ":call vimspector#ClearBreakpoints()<CR>")
